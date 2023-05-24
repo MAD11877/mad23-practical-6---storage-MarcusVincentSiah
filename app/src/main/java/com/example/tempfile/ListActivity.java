@@ -31,11 +31,11 @@ import java.util.Random;
 public class ListActivity extends AppCompatActivity implements ActivityResultListener{
     ArrayList<User> activityList;
     BrandsAdapter mAdapter;
+    MyDBHandler dbHandler;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-
         loadData();
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
@@ -55,34 +55,39 @@ public class ListActivity extends AppCompatActivity implements ActivityResultLis
 
     private void loadData(){
         if(mAdapter == null){
-            return;
+            return; // prevent crashing from onResume.
         }
+
+        dbHandler = new MyDBHandler(this, null, null, 1);
         SharedPreferences sp = getSharedPreferences("contactDb", MODE_PRIVATE);
         Gson gson = new Gson();
         String json = sp.getString("users", null);
         Type type = new TypeToken<ArrayList<User>>() {}.getType();
-        activityList = gson.fromJson(json, type);
-
-        if (activityList == null){
+        //activityList = gson.fromJson(json, type);
+        activityList = dbHandler.getUsers();
+        if (activityList.isEmpty()){
             activityList = generateUserList(20);
-            saveData();
+            //saveData();
         }
         mAdapter.setUserList(activityList);
     }
 
     private void saveData(){
-        SharedPreferences sp = getSharedPreferences("contactDb", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(activityList);
-        editor.putString("users", json);
-        editor.apply();
+//        SharedPreferences sp = getSharedPreferences("contactDb", MODE_PRIVATE);
+//        SharedPreferences.Editor editor = sp.edit();
+//        Gson gson = new Gson();
+//        String json = gson.toJson(activityList);
+//        editor.putString("users", json);
+//        editor.apply();
+
 
     }
 
     //Auto generate users
     private ArrayList<User> generateUserList(int count) {
         ArrayList<User> userList = new ArrayList<>();
+
+
 
         Random random = new Random();
         for (int i = 0; i < count; i++) {
@@ -99,7 +104,8 @@ public class ListActivity extends AppCompatActivity implements ActivityResultLis
             String description = "Description " + randomNumber2;
 
             User user = new User(name, description, followed);
-            userList.add(user);
+            userList.add(user); // adding to the ArrayList for adaptor to use.
+            dbHandler.addUser(user); // adding to db table
         }
 
         return userList;
@@ -195,9 +201,10 @@ public class ListActivity extends AppCompatActivity implements ActivityResultLis
                         public void onClick(DialogInterface dialog, int id) {
                             Bundle extras = new Bundle();
                             User user = data.get(holder.getAdapterPosition());
-                            extras.putString("Name", user.name);
-                            extras.putString("Description", user.description);
-                            extras.putBoolean("Bool", user.followed);
+                            extras.putInt("Id", user.getId());
+                            extras.putString("Name", user.getName());
+                            extras.putString("Description", user.getDescription());
+                            extras.putBoolean("Bool", user.getFollowed());
                             extras.putInt("position", holder.getAdapterPosition());
 
                             Intent message = new Intent(v.getContext(), MainActivity2.class);

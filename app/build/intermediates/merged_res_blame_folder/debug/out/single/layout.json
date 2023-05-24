@@ -1,34 +1,34 @@
 [
     {
-        "merged": "C:\\Users\\marcu\\.gradle\\daemon\\8.0\\com.example.tempfile.app-mergeDebugResources-66:\\layout\\activity_message_group.xml",
-        "source": "C:\\Users\\marcu\\.gradle\\daemon\\8.0\\com.example.tempfile.app-main-69:\\layout\\activity_message_group.xml"
+        "merged": "com.example.tempfile.app-mergeDebugResources-72:/layout/user_list_item.xml",
+        "source": "com.example.tempfile.app-main-75:/layout/user_list_item.xml"
     },
     {
-        "merged": "C:\\Users\\marcu\\.gradle\\daemon\\8.0\\com.example.tempfile.app-mergeDebugResources-66:\\layout\\fragment_group1.xml",
-        "source": "C:\\Users\\marcu\\.gradle\\daemon\\8.0\\com.example.tempfile.app-main-69:\\layout\\fragment_group1.xml"
+        "merged": "com.example.tempfile.app-mergeDebugResources-72:/layout/activity_message_group.xml",
+        "source": "com.example.tempfile.app-main-75:/layout/activity_message_group.xml"
     },
     {
-        "merged": "C:\\Users\\marcu\\.gradle\\daemon\\8.0\\com.example.tempfile.app-mergeDebugResources-66:\\layout\\activity_main.xml",
-        "source": "C:\\Users\\marcu\\.gradle\\daemon\\8.0\\com.example.tempfile.app-main-69:\\layout\\activity_main.xml"
+        "merged": "com.example.tempfile.app-mergeDebugResources-72:/layout/fragment_group2.xml",
+        "source": "com.example.tempfile.app-main-75:/layout/fragment_group2.xml"
     },
     {
-        "merged": "C:\\Users\\marcu\\.gradle\\daemon\\8.0\\com.example.tempfile.app-mergeDebugResources-66:\\layout\\fragment_group2.xml",
-        "source": "C:\\Users\\marcu\\.gradle\\daemon\\8.0\\com.example.tempfile.app-main-69:\\layout\\fragment_group2.xml"
+        "merged": "com.example.tempfile.app-mergeDebugResources-72:/layout/fragment_group1.xml",
+        "source": "com.example.tempfile.app-main-75:/layout/fragment_group1.xml"
     },
     {
-        "merged": "C:\\Users\\marcu\\.gradle\\daemon\\8.0\\com.example.tempfile.app-mergeDebugResources-66:\\layout\\activity_list.xml",
-        "source": "C:\\Users\\marcu\\.gradle\\daemon\\8.0\\com.example.tempfile.app-main-69:\\layout\\activity_list.xml"
+        "merged": "com.example.tempfile.app-mergeDebugResources-72:/layout/activity_main.xml",
+        "source": "com.example.tempfile.app-main-75:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\marcu\\.gradle\\daemon\\8.0\\com.example.tempfile.app-mergeDebugResources-66:\\layout\\user_list_item_special.xml",
-        "source": "C:\\Users\\marcu\\.gradle\\daemon\\8.0\\com.example.tempfile.app-main-69:\\layout\\user_list_item_special.xml"
+        "merged": "com.example.tempfile.app-mergeDebugResources-72:/layout/user_list_item_special.xml",
+        "source": "com.example.tempfile.app-main-75:/layout/user_list_item_special.xml"
     },
     {
-        "merged": "com.example.tempfile.app-mergeDebugResources-66:/layout/activity_list.xml",
-        "source": "com.example.tempfile.app-main-69:/layout/activity_list.xml"
+        "merged": "com.example.tempfile.app-mergeDebugResources-72:/layout/activity_login_page.xml",
+        "source": "com.example.tempfile.app-main-75:/layout/activity_login_page.xml"
     },
     {
-        "merged": "C:\\Users\\marcu\\.gradle\\daemon\\8.0\\com.example.tempfile.app-mergeDebugResources-66:\\layout\\user_list_item.xml",
-        "source": "C:\\Users\\marcu\\.gradle\\daemon\\8.0\\com.example.tempfile.app-main-69:\\layout\\user_list_item.xml"
+        "merged": "com.example.tempfile.app-mergeDebugResources-72:/layout/activity_list.xml",
+        "source": "com.example.tempfile.app-main-75:/layout/activity_list.xml"
     }
 ]

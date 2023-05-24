@@ -3,14 +3,20 @@ package com.example.tempfile;
 import android.icu.lang.UProperty;
 
 public class User {
-    static int idStatic = 1;
-    public User(String name, String description, boolean followed){
-        id= idStatic;
+    //static int idStatic = 1;
+    public User(int id, String name, String description, boolean followed){
+        this.id= id;
         this.name = name;
         this.description = description;
         this.followed = followed;
-        idStatic += 1;
     }
+
+    public User(String name, String description, boolean followed){
+        this.name = name;
+        this.description = description;
+        this.followed = followed;
+    }
+
     public String name;
     public String getName(){
         return name;

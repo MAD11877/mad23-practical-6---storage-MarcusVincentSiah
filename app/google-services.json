@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "812603179880",
+    "firebase_url": "https://week6-practical-68849-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "week6-practical-68849",
+    "storage_bucket": "week6-practical-68849.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812603179880:android:74f1d3fd9396a89a2e0cdd",
+        "android_client_info": {
+          "package_name": "com.example.tempfile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "812603179880-7cmvbps0d7cvvo3g82vi75ss6g8udtv1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsCLzYdcXHYLh8zb7vJfebaIb4JVBiYMM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "812603179880-7cmvbps0d7cvvo3g82vi75ss6g8udtv1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

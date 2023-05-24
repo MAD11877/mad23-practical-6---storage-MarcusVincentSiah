@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.tempfile.app-mergeDebugResources-65:/values-w1240dp-v13/values-w1240dp-v13.xml",
+            "outputFile": "com.example.tempfile.app-mergeDebugResources-71:/values-w1240dp-v13/values-w1240dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\marcu\\AndroidStudioProjects\\mad23-practical-4---recyclerviews-MarcusVincentSiah\\app\\src\\main\\res\\values-w1240dp\\dimens.xml",
+                    "source": "C:\\Users\\marcu\\AndroidStudioProjects\\mad23-practical-6---storage-MarcusVincentSiah\\app\\src\\main\\res\\values-w1240dp\\dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",

@@ -28,14 +28,9 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button btn = findViewById(R.id.button);
-//        boolean[] variable = {false};
-//        User user = new User("Hello World!", "Lorem ipsum dolor sit amet, consecttur adipiscing elit, sed do eiusmod tempor incidiunt ut labore et dolore magna aliqua\"", false);
-//        EditText name = findViewById(R.id.editTextText);
-//        TextView description = findViewById(R.id.descriptionTextView);
-//        name.setText(user.getName());
-//        description.setText(user.getDescription());
 
         Bundle extras = getIntent().getExtras();
+        int id = extras.getInt("Id");
         String name = extras.getString("Name");
         String description = extras.getString("Description");
         boolean bool = extras.getBoolean("Bool", false);
@@ -43,24 +38,24 @@ public class MainActivity2 extends AppCompatActivity {
 
 
 
-        user = new User(name, description, bool);
+        user = new User(id, name, description, bool);
         if (bool == true){
-            btn.setText("Follow");
+            btn.setText("Unfollow");
         }
         else if (bool == false){
-            btn.setText("Unfollow");
+            btn.setText("Follow");
         }
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (user.followed == true) {
                     user.followed = false;
-                    btn.setText("Unfollow");
+                    btn.setText("Follow");
                     Toast.makeText(getApplicationContext(), "Unfollowed", Toast.LENGTH_SHORT).show();
 
                 } else {
                     user.followed = true;
-                    btn.setText("Follow");
+                    btn.setText("Unfollow");
                     Toast.makeText(getApplicationContext(), "Followed", Toast.LENGTH_SHORT).show();
                 }
 
@@ -69,14 +64,7 @@ public class MainActivity2 extends AppCompatActivity {
                 }
 
                 activityList.get(position).followed = user.followed;
-                saveData();
-//                Bundle extras = new Bundle();
-//                extras.putBoolean("hasFollowed", user.followed);
-//                extras.putInt("position", position);
-//                Intent returnIntent = new Intent();
-//                returnIntent.putExtras(extras);
-//                setResult(Activity.RESULT_OK, returnIntent);
-//                finish();
+                saveData(user);
             }
         });
 
@@ -100,11 +88,14 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     private void loadData(){
-        SharedPreferences sp = getSharedPreferences("contactDb", MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = sp.getString("users", null);
-        Type type = new TypeToken<ArrayList<User>>() {}.getType();
-        activityList = gson.fromJson(json, type);
+//        SharedPreferences sp = getSharedPreferences("contactDb", MODE_PRIVATE);
+//        Gson gson = new Gson();
+//        String json = sp.getString("users", null);
+//        Type type = new TypeToken<ArrayList<User>>() {}.getType();
+//        activityList = gson.fromJson(json, type);
+        MyDBHandler dbHandler = new MyDBHandler(this, null, null, 1);
+
+        activityList = dbHandler.getUsers();
     }
 
     private void saveData(){
@@ -114,6 +105,12 @@ public class MainActivity2 extends AppCompatActivity {
         String json = gson.toJson(activityList);
         editor.putString("users", json);
         editor.apply();
+
+    }
+
+    public void saveData(User user){
+        MyDBHandler dbHandler = new MyDBHandler(this, null, null, 1);
+        dbHandler.updateUser(user);
 
     }
 }
