@@ -2,6 +2,7 @@ package com.example.tempfile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -50,6 +51,9 @@ public class LoginPage extends AppCompatActivity {
                             if (value.password.equals(password.getText().toString())) {
                                 Log.d("Log", "Login Sucess");
                                 Toast.makeText(getApplicationContext(), "Login Success", Toast.LENGTH_SHORT).show();
+
+                                Intent intent = new Intent(LoginPage.this, ListActivity.class);
+                                startActivity(intent);
                             }
                             else {
                                 Log.d("Log", "Login Fail");
